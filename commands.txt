@@ -1,0 +1,347 @@
+    1  top
+    2  ls
+    3  clear
+    4  docker run -it -v $(pwd):/ok alpine sh
+    5  docker ps
+    6  docker run -it -v $(pwd):/ok:ro alpine sh
+    7  cd /var/log/docker
+    8  docker info
+    9  docker images
+   10  cd /var/lib/docker/
+   11  ls
+   12  sudo ls
+   13  cd
+   14  docker valume create venkat11
+   15  docker volume create venkat1
+   16  ls
+   17  docker volume create venkat2
+   18  ls
+   19  docker volume ls
+   20  df -h
+   21  docker volume rm venkat1
+   22  docker volume rm venkat2
+   23  docker volume ls
+   24  docker images
+   25  ls
+   26  cd venkat1/
+   27  ls
+   28  vi Dockerfile
+   29  docker build -t venkat_hello:v1 .
+   30  docker images
+   31  docker images |grep venkat
+   32  docker run -it --name myhello venkat_hello python hello.py
+   33  docker run -it  venkat_hello:v1 python hello.py
+   34  docker run -it  venkat_hello:v1 python /code/hello.py
+   35  docker inspect venkat_hello:v1
+   36  ls
+   37  cat docker
+   38  cat Dockerfile 
+   39  vi Dockerfile 
+   40  cat Dockerfile 
+   41  docker build -t venkat_hello:v2 .
+   42  docker run -it venkat_hello:v2
+   43  docker run -it venkat_hello:v2 date
+   44  vi Dockerfile 
+   45  cp Dockerfile venkat.dockerfile
+   46  ls
+   47  vi venkat.dockerfile 
+   48  docker build -t venkat_hello:v3 -f venkat.dockerfile
+   49  docker build -t venkat_hello:v3 -f venkat.dockerfile .
+   50  docker run -it venkat_hello:v3 /code/hello.py
+   51  vi venkat.dockerfile 
+   52  docker run -it venkat_hello:v4 /code/hello.py
+   53  docker build -t venkat_hello:v4 -f venkat.dockerfile .
+   54  docker run -it venkat_hello:v4 /code/hello.py
+   55  cat venkat.dockerfile 
+   56  mkdir mycode
+   57  cp hello.py mycode/ok.py
+   58  docker run -it -v ./mycode:/code venkat_hello:v4 /code/ok.py
+   59  exit
+   60  who
+   61  docker --version
+   62  docker -V
+   63  docker --version
+   64  uname
+   65  uname -r
+   66  uname -a
+   67  clear
+   68  sudo bash
+   69  docker images
+   70  sudo docker images
+   71  sudo bash
+   72  docker images
+   73  df -h
+   74  docker run alpine ping google.com
+   75  docker ps -a
+   76  docker ps
+   77  docker ps -a
+   78  docker ps
+   79  docker ps -a
+   80  clear
+   81  docker ps
+   82  docker ps |grep boo
+   83  docker exce boo date
+   84  docker exec boo date
+   85  docker ps
+   86  docker run -d --name venkat1 alpine ping facebook.com
+   87  docker ps
+   88  docker exec venkat1 ping www.google.com
+   89  docker ps
+   90  docker clear
+   91  clear
+   92  docker ps |grep venkat1
+   93  docker ps -a |grep venkat1
+   94  mkdir venkat1
+   95  cd venkat1/
+   96  ls
+   97  pwd
+   98  vim hello.py
+   99  ls
+  100  cat hello.py 
+  101  py hello.py 
+  102  chmod +x hello.py 
+  103  ls
+  104  clear
+  105  python hello.py 
+  106  docker run  --name venkat_py_container -v .:/code python python /code/hello.py
+  107  docker run --name venkat_py_container -v .:/code python python /code/hello.py
+  108  pwd
+  109  docker run --name venkat_py_container -v /home/eyuser2/venkat1:/code python python /code/hello.py
+  110  docker run -it --name venkat_py_container -v /home/eyuser2/venkat1:/code python python /code/hello.py
+  111  docker run -it --name venkat_py_container1 -v /home/eyuser2/venkat1:/code python python /code/hello.py
+  112  docker ps
+  113  clear
+  114  docker ps
+  115  alias venkat_code='docker run -itd --name venkat_py_container1 -v /home/eyuser2/venkat1:/code python'
+  116  venkat_code python /code/hello.py
+  117  alias venkat_code='docker run -itd --name venkat_py_container1 -v /home/eyuser2/venkat1:/code python'
+  118  venkat_code python /code/hello.py
+  119  alias  venkat_code1='docker run -itd --name ashuv1pycode -v /home/eyuser2/venkat1:/code   python'
+  120  venkat_code1 python /code/hello.py
+  121  alias  venkat_code1='docker run -itd --name ashuv1pycode -v /home/ec2-user/ashutoshh:/code   python'
+  122  venkat_code1 python /code/hello.py
+  123  alias  venkat_code2='docker run -itd --name venkat_vm -v /home/ec2-user/ashutoshh:/code   python'
+  124  venkat_code2  python /code/hello.py
+  125  cp hello.py hello1.py
+  126  vi hello1.py 
+  127  docker ps |grep venkat
+  128  alias  venkat_code3='docker run -itd --name venkat_vm1 -v /home/ec2-user/ashutoshh:/code   python'
+  129  venkat_code3 python /code/hello.py
+  130  docker exec venkat_code3 python /code/hello.py
+  131  docker exec venkat_code3 python /code/hello1.py
+  132  docker exec -it venkat_code3 python /code/hello1.py
+  133  docker exec -it venkat_vm1  python /code/hello1.py
+  134  ls
+  135  docker kill venkat_vm1
+  136  docker ps
+  137  docker rm venkat_vm
+  138  docker stop venkat_vm
+  139  docker kill venkat_vm
+  140  docker rm venkat_vm
+  141  clear
+  142  docker ps
+  143  docker ps -q
+  144  docker kill $(docker ps -q)
+  145  docekr ps -q
+  146  docker ps -q
+  147  ls
+  148  dsdsdfsdfsdfsd
+  149  cd
+  150  vi /etc/ssh/sshd_config 
+  151  vi /etc/ssh/ssh_config 
+  152  vi /etc/sudo
+  153  vi /etc/sudo.conf 
+  154  vi /etc/sudoers
+  155  vi /etc/sudoers 
+  156  vi /etc/passwd
+  157  vi /etc/ssh/sshd_config
+  158  sudo vi /etc/ssh/sshd_config
+  159  docker images
+  160  clear
+  161  docker rmi $(docker ps -aq) --force
+  162  docker images
+  163  mkdir day2
+  164  cd day2/
+  165  ls
+  166  vi venkat.html
+  167  wget https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F35%2FEY_logo13.png%2F535px-EY_logo13.png&imgrefurl=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AEY_logo13.png&tbnid=RtlUtvNBc0eTaM&vet=12ahUKEwij2ZvK48jnAhWG2nMBHdJNAKgQMygAegUIARDyAQ..i&docid=ly8saMBQfbwHqM&w=535&h=599&q=ey%20logo%20png&ved=2ahUKEwij2ZvK48jnAhWG2nMBHdJNAKgQMygAegUIARDyAQ
+  168  ls
+  169  mv imgres\?imgurl\=https\:%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F35%2FEY_logo13.png%2F535px-EY_logo13.png ey.png
+  170  ls
+  171  cp /tmp/ey.jpg .
+  172  ls
+  173  vi venkat.html
+  174  cp venkat.html index.html
+  175  vi index.html 
+  176  vi Dockerfile
+  177  vi venkat.html 
+  178  vi Dockerfile
+  179  cat Dockerfile 
+  180  docker build -t venkat_web:v1 .
+  181  docker images
+  182  docker inspect nginx
+  183  cat Dockerfile 
+  184  docker history venkat_web:v1
+  185  docker run -itd --name venkat -p 1180:80 venkat_web:v1 
+  186  docker ps 
+  187  git clone https://github.com/krishna5787/venkatrepo1
+  188  ls
+  189  cd venkatrepo1/
+  190  ls
+  191  cd ..
+  192  ls
+  193  mv Dockerfile ey.jpg Dockerfile venkatrepo1/
+  194  mv ey.jpg Dockerfile venkatrepo1/
+  195  mv venkat.html venkatrepo1/
+  196  ls
+  197  cd venkatrepo1/
+  198  ls
+  199  git status
+  200  git add .
+  201  git commit -m "sample project creation"
+  202  git config --global user.email "krishnareddy5787@gmail.com"
+  203  git config --global user.name "krishna""
+  204  git config --global user.name "krishna"
+  205  git commit -m "sample file"
+  206  git push origin master
+  207  ls
+  208  git status
+  209  vi Dockerfile 
+  210  git add .
+  211  git commit -m "dockerfile modified"
+  212  docker push origin master
+  213  vi .dockerignore
+  214  ls
+  215  ls -la
+  216  git add .
+  217  git commit -m "added dockerignore file"
+  218  vi .dockerignore 
+  219  git add .
+  220  git commit -m "dockerignore file modified"
+  221  git push origin master
+  222  git status
+  223  docker build -t venkatweb:v2 -f Dockerfile .
+  224  docker files
+  225  docker images
+  226  docker network ls
+  227  docker inspect network bridge
+  228  docker inspect bridge
+  229  ifconfig docker0
+  230  docker network create venkat --subnet 172.28.0.0/16
+  231  docker network create venkat --subnet 172.27.0.0/16
+  232  docker network create venkat --subnet 172.35.0.0/16
+  233  docker network ls
+  234  docker run -it --network venkat -rm alpine sh
+  235  docker run -it --network venkat  alpine sh
+  236  clear
+  237  docker network ls
+  238  ls
+  239  cd day2/
+  240  ls
+  241  docker network rm venkat
+  242  docker network ls
+  243  docker rm $(docker ps -aq) --force
+  244  docker network ls
+  245  docker-compose -v
+  246  cd day2/
+  247  ls
+  248  mkdir venkatapp1
+  249  cd venkat
+  250  cd venkatapp1/
+  251  ls
+  252  vim docker-compose.yml
+  253  q
+  254  vim docker-compose.yml
+  255  docker-compose up
+  256  vim docker-compose.yml
+  257  docker-compose up
+  258  vim docker-compose.yml
+  259  docker-compose up
+  260  docker images
+  261  docker ps
+  262  docker-compose up -d
+  263  docker ps
+  264  docker-compose ps
+  265  cat docker-compose.yml 
+  266  docker-compose stop
+  267  docker-compose ps
+  268  docker-compose rm
+  269  docker-compose down
+  270  vi docker-compose.yml 
+  271  docker-compose up -d
+  272  docker-compose ps
+  273  docker ps
+  274  docker images
+  275  docker-compose images
+  276  docker-compose down
+  277  docker-compose ps
+  278  ls
+  279  docker images |grep venkat
+  280  docker tag venkatweb:v2 krishna5787/venkatweb:v2
+  281  venkatapp1:
+  282    image: alpine
+  283    container_name: c10
+  284  docker images |grep -i venkat
+  285  docker login
+  286  docker push krishna5787/venkatwev:v2
+  287  docker push krishna5787/venkatweb:v2
+  288  docker logout
+  289  docker-compose ps
+  290  cd ..
+  291  mkdir venkatapp2
+  292  cd venkatapp2/
+  293  vi app2.yml
+  294  ls
+  295  docker-compose -f app2.yml up -d
+  296  docker-compose ps
+  297  docker ps
+  298  ls
+  299  cat app2.yml 
+  300  git clone https://github.com/microsoft/project-html-website.git
+  301  ls
+  302  cd project-html-website/
+  303  ls
+  304  cd ..
+  305  mv project-html-website/ htmlcode
+  306  ls
+  307  vim app2.yml 
+  308  docker-composer -f app2.yml down
+  309  docker-compose -f app2.yml down
+  310  vi app2.yml 
+  311  docker-compose -f app2.yml down
+  312  vi app2.yml 
+  313  docker-compose -f app2.yml down
+  314  docker-compose -f app2.ymlup
+  315  docker-compose -f app2.yml up
+  316  vi app2.yml 
+  317  docker-compose -f app2.yml up
+  318  vi app2.yml 
+  319  docker-compose -f app2.yml up
+  320  vi app2.yml 
+  321  clear
+  322  ls
+  323  cd ..
+  324  ls
+  325  cd venkatrepo1/
+  326  ls
+  327  vi docker-compose.yml
+  328  ls
+  329  docker-compose up 
+  330  docker-compose ps
+  331  docker-compose down
+  332  docker-compose images
+  333  git status
+  334  git add .
+  335  git commit -m "docker compose file created"
+  336  git push 
+  337  ls
+  338  docker images
+  339  docker images 
+  340  docker images |grep mysql
+  341  docker images |grep mo
+  342  docker run -d -e MYSQL_ROOT_PASSWORD=ey321 --name venkatdb1 mysql
+  343  docker logs venkatdb1
+  344  docker exec -it venkatdb1 bash
+  345  history
+  346  ls
+  347  history > commands.txt

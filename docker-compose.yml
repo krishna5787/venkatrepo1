@@ -1,0 +1,9 @@
+version: '3.7'
+services: 
+ myapp1: 
+  build: .
+  image: venkatrepo:v1
+  container_name: appv1
+  ports:
+          - "8033:80"
+
